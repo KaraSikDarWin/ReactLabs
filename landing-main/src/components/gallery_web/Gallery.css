@@ -1,0 +1,202 @@
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.thumbnail {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.2s;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+}
+
+.thumbnail.active {
+  border-color: #007bff;
+}
+
+.main-image-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.main-image {
+  width: 600px; /* or your preferred fixed width */
+  height: 400px; /* or your preferred fixed height */
+  object-fit: cover; /* or 'cover' if you prefer cropping */
+  cursor: zoom-in;
+  border-radius: 20px;
+  background-color: black; /* shows background if aspect ratio leaves space */
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.nav-button.prev {
+  left: 10px;
+}
+
+.nav-button.next {
+  right: 10px;
+}
+
+.nav-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90vw; /* Viewport width units */
+  max-height: 90vh; /* Viewport height units */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: calc(80vh - 100px); /* Account for nav buttons */
+  object-fit: contain; /* Maintain aspect ratio without cropping */
+  display: block;
+  margin: 0 auto;
+}
+
+.close-button {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.modal-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+  color: white;
+}
+
+.modal-nav button {
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.main-image-with-sides {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 40px;
+  margin-bottom: 20px;
+  flex-wrap: nowrap;
+}
+
+.main-image-center {
+  flex-shrink: 0;
+  max-width: 70%;
+}
+
+.side-image {
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition:
+    transform 0.3s,
+    opacity 0.3s;
+  flex-shrink: 0;
+}
+
+.side-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.side-image:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.side-image.left {
+  order: -1;
+}
+
+.side-image.right {
+  order: 1;
+}
+
+.gallery-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.gallery-half {
+  flex: 1;
+  min-width: 300px;
+}
+
+.gallery-full {
+  width: 100%;
+}
+
+@media (max-width: 1400px) {
+  .gallery-row {
+    flex-direction: column;
+  }
+
+  .gallery-half {
+    min-width: 100%;
+  }
+}

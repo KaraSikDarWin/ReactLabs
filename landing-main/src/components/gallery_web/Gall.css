@@ -1,0 +1,15 @@
+.gallery-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.gallery-half {
+  flex: 1;
+  min-width: 300px; /* Можно настроить по желанию */
+}
+
+.gallery-full {
+  width: 100%;
+}

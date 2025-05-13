@@ -1,0 +1,127 @@
+/* container для родительского блока */
+.container {
+  display: flex;
+  flex-direction: row; /* горизонтальное расположение */
+  height: 800px;
+  width: 100%;
+}
+
+/* Конкретный блок для канваса */
+.canvas-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px 0px 0px 10px;
+  height: 800px;
+}
+
+/* Обертка канваса, чтобы он заполнил родительский блок */
+.canvas-wrapper {
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Канвас сам по себе */
+.canvas {
+}
+
+/* Блок кнопок справа */
+.buttons-container {
+  border-radius: 0px 10px 10px 0px;
+
+  padding: 20px;
+  background-color: #fff;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+/* Обертка для кнопок */
+.button-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Кнопки */
+.button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+  border: none;
+}
+
+.scramble {
+  background-color: #007bff;
+}
+
+.scramble:hover {
+  background-color: #0056b3;
+}
+
+.reset {
+  background-color: #28a745;
+}
+
+.reset:hover {
+  background-color: #218838;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .canvas-container {
+    max-width: 100%; /* Full width on small screens */
+  }
+
+  .buttons-container {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .button-wrapper {
+    flex-direction: row; /* Keep buttons side-by-side */
+    flex-wrap: wrap; /* Allow wrapping if needed */
+    gap: 8px;
+  }
+
+  .Button {
+    width: 90px; /* Slightly smaller buttons */
+    height: 36px;
+    font-size: 11px;
+    margin-right: 0; /* Remove margin for consistency */
+  }
+
+  .Timer-container {
+    margin: 10px auto;
+  }
+
+  .Bloc-timer {
+    font-size: 50px; /* Smaller timer font */
+  }
+
+  .bloc-timer span {
+    font-size: 11px;
+  }
+}

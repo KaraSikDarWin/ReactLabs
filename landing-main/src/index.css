@@ -1,0 +1,958 @@
+:root {
+  --main-font-family-title: "Ostrovsky";
+  --main-font-family-text: "Montserrat";
+  --main-font-size-title: 48px;
+  --main-border-radius: 30px;
+  --main-trasform-scale: scale(1.05);
+  --main-transition: transform 0.5s ease;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--main-font-family-text);
+}
+
+/*раздел с регистрацией(первый экран)*/
+/*start*/
+
+.section-registration {
+  height: 100vh;
+  background: url(./img/background_registration.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.container-registration {
+  width: 654px;
+  height: 724px;
+  flex-shrink: 0;
+  border-radius: var(--main-border-radius);
+  background: rgba(43, 128, 255, 0.16);
+  backdrop-filter: blur(19.15px);
+  margin-left: 47px;
+  padding: 40px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  position: relative;
+}
+
+.container-registration h1 {
+  font-family: var(--main-font-family-title);
+  font-size: var(--main-font-size-title);
+  font-weight: bold;
+  margin-bottom: 30px;
+  line-height: 1.2;
+  z-index: 3;
+}
+
+.container-registration h2 {
+  font-size: 24px;
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.container-registration .description {
+  font-size: 20px;
+  line-height: 1.5;
+  font-style: italic;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  font-variant: small-caps;
+}
+
+.container-registration .date {
+  font-size: 20px;
+  margin-bottom: 40px;
+  font-style: italic;
+}
+
+.register-btn {
+  border-radius: 70px;
+  font-family: var(--main-font-family-title);
+  background: rgba(170, 4, 4, 0.65);
+  color: white;
+  flex-shrink: 0;
+  border: none;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 40px;
+  width: fit-content;
+  line-height: 100%;
+  transition: var(--main-transition);
+}
+
+.register-btn:hover {
+  transform: var(--main-trasform-scale);
+}
+
+.participants {
+  position: absolute;
+  right: 100px;
+  bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgba(170, 4, 4, 0.65);
+  backdrop-filter: blur(7.050000190734863px);
+  transition: var(--main-transition);
+  z-index: 4;
+}
+
+.participants:hover {
+  transform: var(--main-trasform-scale);
+}
+
+.participants .number {
+  font-size: 24px;
+  text-align: center;
+  font-family: var(--main-font-family-title);
+  font-weight: 700;
+  color: white;
+  line-height: 27px;
+}
+
+.participants .text {
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  font-family: var(--main-font-family-title);
+  line-height: 19px;
+}
+
+.line {
+  position: absolute;
+  pointer-events: none;
+  stroke-width: 4px;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+/* Первая линия */
+.line-1 {
+  width: 110%;
+  height: auto;
+  left: -10%;
+  transform: translateY(-50%);
+}
+
+/* Вторая линия */
+.line-2 {
+  width: 110%;
+  height: auto;
+  bottom: -10%;
+  right: -15%;
+}
+
+/*end*/
+
+/*раздел с форматом соревнований(второй экран)*/
+/*start*/
+.section-competition-format {
+  height: 100vh;
+  padding: 30px;
+  background-color: white;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.competition-format-conteiner {
+  width: 100%;
+  min-width: 800px;
+  height: 100%;
+  border-radius: var(--main-border-radius);
+  background: linear-gradient(
+    253deg,
+    rgba(7, 139, 233, 0.8) -11.51%,
+    rgba(240, 248, 255, 0.8) 93.97%
+  );
+  backdrop-filter: blur(55.099998474121094px);
+  padding: 0 40px;
+  text-align: left;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.competition-format-conteiner h1 {
+  width: 50%;
+  font-family: var(--main-font-family-title);
+  font-size: var(--main-font-size-title);
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 80px;
+  line-height: 125%;
+}
+
+.competition-format-conteiner .description {
+  width: 50%;
+  font-size: 24px;
+  line-height: 138%;
+  font-style: italic;
+  margin-bottom: 10px;
+  margin-top: 100px;
+}
+
+.competition-format-conteiner .amount-price {
+  width: 50%;
+  font-size: 24px;
+  line-height: 100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.competition-format-conteiner .price {
+  width: 50%;
+  font-size: 24px;
+  line-height: 132%;
+  font-style: italic;
+  margin-bottom: 40px;
+  margin-top: 10px;
+  font-variant: small-caps;
+}
+
+.img-competition {
+  position: absolute;
+  left: 50%;
+  top: 3.6%;
+}
+
+.blue-circle {
+  position: absolute;
+  right: 80px;
+  bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: rgba(44, 96, 180, 0.71);
+  backdrop-filter: blur(7.050000190734863px);
+  transition: var(--main-transition);
+  z-index: 10;
+}
+
+@media (max-width: 1199px) {
+  .blue-circle {
+    display: none;
+  }
+  
+  .img-competition {
+  display:none
+	}
+}
+@media (min-width: 1200px) {
+  .competition-format-conteiner {
+    padding-right: 440px; /* 380 px круг + 60 px «воздуха» */
+  }
+}
+
+.blue-circle:hover {
+  transform: var(--main-trasform-scale);
+}
+
+.blue-circle .text {
+  color: white;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 132%;
+  font-variant: all-small-caps;
+}
+/*end*/
+
+/*раздел о Владивостоке(третий экран)*/
+/*start*/
+.section-vladivostok {
+  height: 140vh;
+  background: url(./img/background_vladivostok.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.container-vladivostok {
+  width: 617px;
+  height: 579px;
+  flex-shrink: 0;
+  border-radius: var(--main-border-radius);
+  background: rgba(170, 4, 4, 0.19);
+  backdrop-filter: blur(19.149999618530273px);
+  margin-left: 47px;
+  padding: 40px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  z-index: 0;
+  position: relative;
+}
+
+.container-vladivostok h1 {
+  position: absolute;
+  font-family: var(--main-font-family-title);
+  font-size: var(--main-font-size-title);
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-shadow: 3px 7px 10.9px rgba(0, 0, 0, 0.25);
+  top: -280px;
+  left: 40px;
+  line-height: 132%;
+}
+
+.container-vladivostok .description {
+  font-size: 24px;
+  line-height: 1.5;
+  font-style: italic;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  font-variant: small-caps;
+}
+
+.container-vladivostok .vladivostok {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 132%;
+}
+
+.cirle-speed {
+  position: absolute;
+  right: 100px;
+  bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 164px;
+  height: 164px;
+  border-radius: 50%;
+  background: rgba(170, 4, 4, 0.65);
+  backdrop-filter: blur(7.050000190734863px);
+  transition: var(--main-transition);
+}
+
+.cirle-speed:hover {
+  transform: var(--main-trasform-scale);
+}
+
+.cirle-speed .text {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  line-height: 19px;
+}
+/*end*/
+
+/*раздел о ДВФУ(четвёртый экран)*/
+/*start*/
+.section-fefu {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 10%;
+}
+
+.fefu-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.fefu-title {
+  font-family: var(--main-font-family-title);
+  font-size: var(--main-font-size-title);
+  color: black;
+  line-height: 58px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.fefu-text {
+  font-family: var(--main-font-family-text);
+  font-size: 24px;
+  line-height: 35px;
+  color: black;
+  font-style: italic;
+  font-variant: small-caps;
+  max-width: 800px;
+  margin-bottom: 50px;
+}
+
+.fefu-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.fefu-image {
+  width: 100%;
+  max-width: 350px;
+  height: 250px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: var(--main-transition);
+}
+
+.fefu-image:hover {
+  transform: var(--main-trasform-scale);
+}
+
+/* Адаптация */
+@media (max-width: 1024px) {
+  .fefu-title {
+    font-size: 30px;
+  }
+
+  .fefu-text {
+    font-size: 18px;
+  }
+
+  .fefu-gallery {
+    flex-wrap: wrap;
+  }
+
+  .fefu-image {
+    max-width: 300px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 907px) {
+  .section-fefu {
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  .fefu-title {
+    font-size: 28px;
+  }
+
+  .fefu-image {
+    max-width: 100%;
+    height: 400px;
+  }
+}
+/*end*/
+
+/*раздел с интерактивом(пятый экран)*/
+/*start*/
+.section-interactive {
+  padding: 30px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.interactive-container {
+  width: 100%;
+  height: auto;
+  border-radius: var(--main-border-radius);
+  background: linear-gradient(
+    253deg,
+    rgba(7, 139, 233, 0.8) -11.51%,
+    rgba(240, 248, 255, 0.8) 93.97%
+  );
+  backdrop-filter: blur(55.099998474121094px);
+  padding: 0 40px;
+  text-align: center;
+
+  padding: 50px;
+}
+
+.img-interactive {
+  position: absolute;
+  width: auto;
+  height: 70%;
+  flex-shrink: 0;
+  max-height: 600px;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  object-fit: contain;
+  filter: blur(1px);
+}
+
+.interactive-title {
+  font-family: var(--main-font-family-title);
+  font-size: var(--main-font-size-title);
+  color: black;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 35px;
+  margin: 40px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.interactive-content {
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  align-items: center;
+  position: relative;
+}
+
+.interactive-text {
+  font-family: var(--main-font-family-text);
+  font-size: 24px;
+  line-height: 35px;
+  font-style: italic;
+  font-weight: 300;
+  font-variant: small-caps;
+  margin-bottom: 60px;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .img-interactive {
+    height: 55%;
+  }
+
+  .interactive-title {
+    font-size: 44px;
+  }
+
+  .interactive-text {
+    font-size: 22px;
+  }
+}
+/*end*/
+
+/*раздел с футером*/
+/*start*/
+.footer {
+  height: 55vh;
+  color: black;
+  font-family: var(--main-font-family-text);
+  padding: 0;
+  background: url(./img/line-footer.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-top {
+  padding: 20px 50px;
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.footer-slogan {
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+  font-variant: small-caps;
+  margin-bottom: 30px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 50px 50px;
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  flex-wrap: wrap;
+}
+
+.footer-block {
+  padding: 0 20px;
+  margin: 10px 0;
+  flex: 0 1 auto;
+}
+
+.footer-block a {
+  text-decoration: none;
+  color: black;
+}
+
+.footer-line {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: var(--main-transition);
+}
+
+.footer-line:hover {
+  transform: var(--main-trasform-scale);
+  color: #2b80ff;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .footer-top {
+    padding: 20px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .footer-slogan {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .footer-block {
+    width: 100%;
+    padding: 0;
+  }
+
+  .footer-line {
+    white-space: normal;
+  }
+}
+/*end*/
+
+@font-face {
+  font-family: "Ostrovsky";
+  src: url(./fonts/Ostrovsky-Bold_0.otf) format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* General Reset for Height Responsiveness */
+@media (max-height: 800px) {
+  :root {
+    --main-font-size-title: 36px; /* Reduce title font size for shorter screens */
+  }
+
+  /* Ensure sections don’t collapse too much */
+  section {
+    min-height: 600px; /* Minimum height to prevent extreme shrinkage */
+  }
+}
+
+/* Section Registration */
+@media (max-height: 800px) {
+  .section-registration {
+    height: auto; /* Allow section to grow based on content */
+    min-height: 600px;
+    padding: 20px 0;
+  }
+
+  .container-registration {
+    width: 90%; /* Flexible width for smaller screens */
+    max-width: 600px;
+    height: auto; /* Allow container to adapt to content */
+    min-height: 500px;
+    margin: 0 auto; /* Center container */
+    padding: 20px;
+  }
+
+  .container-registration h1 {
+    font-size: var(--main-font-size-title);
+    margin-bottom: 20px;
+  }
+
+  .container-registration h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .container-registration .description,
+  .container-registration .date {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .register-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .participants {
+    width: 120px;
+    height: 120px;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .participants .number {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .participants .text {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+/* Section Competition Format */
+@media (max-height: 800px) {
+  .section-competition-format {
+    height: auto;
+    min-height: 600px;
+    padding: 20px;
+  }
+
+  .competition-format-conteiner {
+    height: auto;
+    min-height: 500px;
+    padding: 20px;
+    min-width: 0; /* Allow container to shrink */
+  }
+
+  .competition-format-conteiner h1 {
+    font-size: var(--main-font-size-title);
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 100%; /* Ensure full width for readability */
+  }
+
+  .competition-format-conteiner .description,
+  .competition-format-conteiner .amount-price,
+  .competition-format-conteiner .price {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .blue-circle {
+    width: 300px;
+    height: 300px;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .blue-circle .text {
+    font-size: 20px;
+  }
+
+  .img-competition {
+    top: 10px; /* Adjust positioning to avoid overlap */
+  }
+}
+
+/* Section Vladivostok */
+@media (max-height: 800px) {
+  .section-vladivostok {
+    height: auto;
+    min-height: 700px;
+    padding: 20px 0;
+  }
+
+  .container-vladivostok {
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    min-height: 400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .container-vladivostok h1 {
+    font-size: var(--main-font-size-title);
+    position: static; /* Remove absolute positioning to prevent overlap */
+    margin-bottom: 20px;
+    text-shadow: none; /* Simplify for smaller screens */
+  }
+
+  .container-vladivostok .description,
+  .container-vladivostok .vladivostok {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .cirle-speed {
+    width: 120px;
+    height: 120px;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .cirle-speed .text {
+    font-size: 16px;
+    line-height: 16px;
+  }
+}
+
+/* Section FEFU */
+@media (max-height: 800px) {
+  .section-fefu {
+    height: auto;
+    min-height: 600px;
+    padding: 40px 20px;
+  }
+
+  .fefu-title {
+    font-size: var(--main-font-size-title);
+    margin-bottom: 20px;
+  }
+
+  .fefu-text {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  .fefu-gallery {
+    gap: 20px;
+  }
+
+  .fefu-image {
+    max-width: 300px;
+    height: 200px;
+  }
+}
+
+/* Section Interactive */
+@media (max-height: 800px) {
+  .section-interactive {
+    height: auto;
+    min-height: 500px;
+    padding: 20px;
+  }
+
+  .interactive-container {
+    padding: 30px;
+    height: auto;
+  }
+
+  .interactive-title {
+    font-size: var(--main-font-size-title);
+    margin: 20px 0;
+  }
+
+  .interactive-text {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+
+  .img-interactive {
+    height: 50%;
+    max-height: 400px;
+  }
+}
+
+/* Footer */
+@media (max-height: 800px) {
+  .footer {
+    height: auto;
+    min-height: 400px;
+    padding: 30px 20px;
+  }
+
+  .footer-top {
+    padding: 15px;
+  }
+
+  .footer-slogan {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .footer-bottom {
+    padding: 15px;
+  }
+
+  .footer-line {
+    font-size: 18px;
+  }
+}
+
+/* Extra Small Heights (e.g., very short mobile screens) */
+@media (max-height: 600px) {
+  :root {
+    --main-font-size-title: 28px;
+  }
+
+  section {
+    min-height: 500px;
+  }
+
+  .container-registration,
+  .competition-format-conteiner,
+  .container-vladivostok,
+  .fefu-container,
+  .interactive-container {
+    padding: 15px;
+  }
+
+  .register-btn,
+  .blue-circle .text,
+  .cirle-speed .text,
+  .footer-slogan,
+  .footer-line {
+    font-size: 14px;
+  }
+
+  .participants,
+  .cirle-speed {
+    width: 100px;
+    height: 100px;
+  }
+
+  .blue-circle {
+    width: 250px;
+    height: 250px;
+  }
+
+  .fefu-image {
+    max-width: 250px;
+    height: 150px;
+  }
+}
