@@ -6,7 +6,7 @@
 	  filtering - функция обновления данных для фильтрации
 */
 
-const Filter = ({filtering, fullData}) => {
+const Filter = ({filtering, fullData, setCurData}) => {
     const handleSubmit= (event) => {        
         event.preventDefault();		
 
@@ -41,10 +41,12 @@ const Filter = ({filtering, fullData}) => {
             }
         }
         //передаем родительскому компоненту новое состояние - отфильтрованный массив
+        setCurData(arr);
         filtering(arr);   
 	}
 
     const handleReset = () => {
+        setCurData(fullData);
         filtering(fullData);
     };
 

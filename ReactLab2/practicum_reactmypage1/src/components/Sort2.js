@@ -61,7 +61,7 @@ const Sort = ({ filtering, data, fullData }) => {
     switch (key) {
       case "1": return row.name.toLowerCase(); // Имя Фамилия
       case "2": return parseFloat(row.avg); // Среднее время
-      case "3": return Math.min(...row.times.map(Number)); // Лучшее время
+      case "3": return Math.min(...row.results.map(Number)); // Лучшее время
       default: return null;
     }
   };
@@ -98,7 +98,7 @@ const Sort = ({ filtering, data, fullData }) => {
 
   return (
     <details>
-      <summary>Фильтр</summary>
+      <summary>Сортировки</summary>
       <form onSubmit={handleSubmit} onReset={handleReset}>
         {[0, 1, 2].map(i => (
           <p key={i}>

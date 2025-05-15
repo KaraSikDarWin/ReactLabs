@@ -149,19 +149,5 @@ input[type="button"][value="Сбросить фильтры"]:hover, input[type=
   background-color: #80DEEA; /* Более светлый голубой цвет при наведении */
 }
 
-svg {
-  width: 1600px;
-  height: 1600px;
-  margin-bottom: 100px;
-}
 
-svg text {
-  font: 10px Verdana;
-}
-
-svg path, line {
-  fill: none;
-  stroke: #333333;
-  width: 1px;
-} 
 

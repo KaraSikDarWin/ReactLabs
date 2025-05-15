@@ -2,57 +2,57 @@
 
 import { useRef, useEffect } from 'react';
 import * as THREE from 'three';
-import { useThree } from '@react-three/fiber'; // 添加这行
+import { useThree } from '@react-three/fiber'; 
 
-// 颜色配置
+
 const FACE_COLORS = {
-  up: '#FFFFFF', // 白色
-  front: '#FF0000', // 红色
-  right: '#0000FF', // 蓝色
-  back: '#FFA500', // 橙色
-  left: '#00FF00', // 绿色
-  down: '#FFFF00', // 黄色
+  up: '#FFFFFF', 
+  front: '#FF0000', 
+  right: '#0000FF', 
+  back: '#FFA500', 
+  left: '#00FF00', 
+  down: '#FFFF00', 
 };
 
-// 重构后的旋转映射
+
 const CLOCKWISE_ROTATION_MAPS = {
-  // X轴旋转 (从右侧看)
+  
   x: {
-    clockwise: { // 顺时针
-      1: { axis: 'x', layer: 1, angle: -Math.PI / 2 },    // 右层顺时针
-      0: { axis: 'x', layer: 0, angle: -Math.PI / 2 },    // 中层顺时针
-      '-1': { axis: 'x', layer: -1, angle: -Math.PI / 2 }, // 左层顺时针
+    clockwise: { 
+      1: { axis: 'x', layer: 1, angle: -Math.PI / 2 },    
+      0: { axis: 'x', layer: 0, angle: -Math.PI / 2 },   
+      '-1': { axis: 'x', layer: -1, angle: -Math.PI / 2 }, 
     },
-    counterclockwise: { // 逆时针
-      1: { axis: 'x', layer: 1, angle: Math.PI / 2 },    // 右层逆时针
-      0: { axis: 'x', layer: 0, angle: Math.PI / 2 },    // 中层逆时针
-      '-1': { axis: 'x', layer: -1, angle: Math.PI / 2 }, // 左层逆时针
+    counterclockwise: { 
+      1: { axis: 'x', layer: 1, angle: Math.PI / 2 },    
+      0: { axis: 'x', layer: 0, angle: Math.PI / 2 },    
+      '-1': { axis: 'x', layer: -1, angle: Math.PI / 2 }, 
     }
   },
-  // Y轴旋转 (从上方看)
+
   y: {
-    clockwise: { // 顺时针
-      1: { axis: 'y', layer: 1, angle: Math.PI / 2 },    // 上层顺时针
-      0: { axis: 'y', layer: 0, angle: Math.PI / 2 },    // 中层顺时针
-      '-1': { axis: 'y', layer: -1, angle: Math.PI / 2 }, // 下层顺时针
+    clockwise: { 
+      1: { axis: 'y', layer: 1, angle: Math.PI / 2 },   
+      0: { axis: 'y', layer: 0, angle: Math.PI / 2 },    
+      '-1': { axis: 'y', layer: -1, angle: Math.PI / 2 }, 
     },
-    counterclockwise: { // 逆时针
-      1: { axis: 'y', layer: 1, angle: -Math.PI / 2 },    // 上层逆时针
-      0: { axis: 'y', layer: 0, angle: -Math.PI / 2 },    // 中层逆时针
-      '-1': { axis: 'y', layer: -1, angle: -Math.PI / 2 }, // 下层逆时针
+    counterclockwise: { 
+      1: { axis: 'y', layer: 1, angle: -Math.PI / 2 },    
+      0: { axis: 'y', layer: 0, angle: -Math.PI / 2 },    
+      '-1': { axis: 'y', layer: -1, angle: -Math.PI / 2 }, 
     }
   },
-  // Z轴旋转 (从前方看)
+  
   z: {
-    clockwise: { // 顺时针
-      1: { axis: 'z', layer: 1, angle: -Math.PI / 2 },    // 前层顺时针
-      0: { axis: 'z', layer: 0, angle: -Math.PI / 2 },    // 中层顺时针
-      '-1': { axis: 'z', layer: -1, angle: -Math.PI / 2 }, // 后层顺时针
+    clockwise: { 
+      1: { axis: 'z', layer: 1, angle: -Math.PI / 2 },    
+      0: { axis: 'z', layer: 0, angle: -Math.PI / 2 },   
+      '-1': { axis: 'z', layer: -1, angle: -Math.PI / 2 }, 
     },
-    counterclockwise: { // 逆时针
-      1: { axis: 'z', layer: 1, angle: Math.PI / 2 },    // 前层逆时针
-      0: { axis: 'z', layer: 0, angle: Math.PI / 2 },    // 中层逆时针
-      '-1': { axis: 'z', layer: -1, angle: Math.PI / 2 }, // 后层逆时针
+    counterclockwise: { 
+      1: { axis: 'z', layer: 1, angle: Math.PI / 2 },    
+      0: { axis: 'z', layer: 0, angle: Math.PI / 2 },    
+      '-1': { axis: 'z', layer: -1, angle: Math.PI / 2 }, 
     }
   }
 };

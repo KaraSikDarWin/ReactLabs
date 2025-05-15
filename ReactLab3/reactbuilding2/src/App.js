@@ -10,7 +10,7 @@ function App() {
  <div className="App">
  <h3>Самые высокие здания и сооружения</h3>
  <Chart data={ currData } />
- <Table data={ currData } amountRows="10" updateCurData={updateCurData}/>
+ <Table data={ buildings } amountRows="10" updateCurData={updateCurData}/>
  </div>
  );
 }

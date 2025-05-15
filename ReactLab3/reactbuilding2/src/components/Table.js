@@ -12,7 +12,7 @@ import { useState } from "react";
 const Table = ({ data, amountRows, updateCurData, showPagination = true }) => {
     const [activePage, setActivePage] = useState("1");
     const [dataTable, setDataTable] = useState(data);
-
+    const [currData, changeCurrData] = useState(data);
     const changeActive = (event) => {
         setActivePage(event.target.innerHTML);
     };
@@ -48,7 +48,7 @@ const Table = ({ data, amountRows, updateCurData, showPagination = true }) => {
     return( 
         <>
             <h4>Фильтры</h4>
-            <Filter filtering={ updateDataTable } data={ dataTable } fullData={ data } />
+            <Filter filtering={ updateDataTable } data = {currData}  fullData={ data }  setCurData= {changeCurrData} />
 
             <table>
                 <TableHead head={ Object.keys(data[0]) } />

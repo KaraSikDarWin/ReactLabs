@@ -36,7 +36,6 @@ const Chart = ({ data }) => {
       setError(false);
     }
 
-    setOx(event.target['ox'].value);
     setOy(tempOy);
     setGraphType(event.target['graphType'].value);
   };
@@ -86,7 +85,6 @@ const Chart = ({ data }) => {
         <select name="graphType" defaultValue={graphType}>
           <option value="dotted">Точечная диаграмма</option>
           <option value="histogram">Гистограмма</option>
-          <option value="line">График</option>
         </select>
 
         <p>
